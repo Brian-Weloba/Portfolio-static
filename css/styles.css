@@ -8,11 +8,9 @@
     src: url("/res/fonts/Lato-BoldItalic.ttf") format("truetype");
 }
 
-#intro {
+.intro {
     background-color: #f3f3f3;
     color: #932432;
-    height: 1010px;
-    width: 100vw;
     padding-top: 75px;
     padding-left: 20px;
     font-family: Felix Ti;
@@ -36,10 +34,13 @@
 }
 
 .about,
-.work {
+.work,
+.intro {
     height: 1010px;
-    width: 100vw;
-    background-color: #932432
+}
+
+.about {
+    background-color: #932432;
 }
 
 .headline {
@@ -58,6 +59,6 @@
     width: 1080px;
     margin-left: 10px;
     font-family: Lato;
-    font-size: 16px;
+    font-size: 21px;
     color: #f3f3f3;
 }

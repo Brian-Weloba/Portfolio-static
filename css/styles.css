@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "Felix Ti";
+    src: url("/res/fonts/Felixti.TTF") format("truetype");
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("/res/fonts/Lato-BoldItalic.ttf") format("truetype");
+}
+
+#intro {
+    background-color: #f3f3f3;
+    color: #932432;
+    height: 1010px;
+    width: 100vw;
+    padding-top: 75px;
+    padding-left: 20px;
+    font-family: Felix Ti;
+}
+
+#brian {
+    font-size: 336px;
+}
+
+#weloba {
+    font-size: 250px;
+    top: 340px;
+    position: absolute;
+}
+
+#portfolio {
+    font-size: 190px;
+    position: absolute;
+    top: 540px;
+    color: #283747;
+}
+
+.about,
+.work {
+    height: 1010px;
+    width: 100vw;
+    background-color: #932432
+}
+
+.headline {
+    padding-top: 75px;
+    padding-left: 20px;
+    font-size: 120px;
+    font-family: Felix Ti;
+    color: #f3f3f3;
+}
+
+.work {
+    background-color: #283747;
+}
+
+#about-info {
+    width: 1080px;
+    margin-left: 10px;
+    font-family: Lato;
+    font-size: 16px;
+    color: #f3f3f3;
+}

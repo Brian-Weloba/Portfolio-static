@@ -8,6 +8,43 @@
     src: url("/res/fonts/Lato-BoldItalic.ttf") format("truetype");
 }
 
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 70px;
+    background-color: #f3f3f3;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.logo {
+    color: #932432;
+    font-family: Felix Ti;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li {
+    list-style: none
+}
+
+.nav-links a {
+    color: #283747;
+    text-decoration: none;
+}
+
 .intro {
     background-color: #f3f3f3;
     color: #932432;
@@ -36,7 +73,7 @@
 .about,
 .work,
 .intro {
-    height: 1010px;
+    height: 100vh;
 }
 
 .about {

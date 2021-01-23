@@ -8,12 +8,6 @@
     src: url("/res/fonts/Lato-BoldItalic.ttf") format("truetype");
 }
 
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
 nav {
     display: flex;
     justify-content: space-around;
@@ -34,10 +28,12 @@ nav {
     display: flex;
     justify-content: space-around;
     width: 30%;
+    color: #283747;
 }
 
 .nav-links li {
-    list-style: none
+    list-style: none;
+    color: #283747;
 }
 
 .nav-links a {
@@ -53,8 +49,9 @@ nav {
 .burger div {
     width: 25px;
     height: 3px;
-    margin: 3px;
+    margin: 5px;
     background-color: #283747;
+    transition: all 0.4s ease;
 }
 
 .intro {
@@ -114,7 +111,7 @@ nav {
 
 @media screen and (max-width:768px) {
     body {
-        overflow: hidden;
+        overflow-x: hidden;
     }
     .nav-links {
         position: absolute;
@@ -127,7 +124,7 @@ nav {
         align-items: center;
         width: 50%;
         transform: translateX(100%);
-        transition: 0.5s ease-in;
+        transition: transform 0.5s ease-in;
     }
     .nav-links li {
         opacity: 0;
@@ -150,4 +147,16 @@ nav {
         opacity: 1;
         transform: translateX(0px);
     }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(0px, 6px)
+}
+
+.toggle .line2 {
+    display: none;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(0px, -6px)
 }

@@ -17,6 +17,10 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 2;
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    -o-transition: background-color 0.2s;
+    transition: background-color 0.2s;
 }
 
 .logo {
@@ -27,8 +31,13 @@ nav {
 .nav-links {
     display: flex;
     justify-content: space-around;
+    background-color: transparent;
     width: 30%;
-    color: #283747;
+    color: #932432;
+}
+
+ul {
+    padding-inline-start: 0px;
 }
 
 .nav-links li {
@@ -54,61 +63,6 @@ nav {
     transition: all 0.4s ease;
 }
 
-.intro {
-    background-color: #f3f3f3;
-    color: #932432;
-    padding-top: 75px;
-    padding-left: 20px;
-    font-family: Felix Ti;
-}
-
-#brian {
-    font-size: 336px;
-}
-
-#weloba {
-    font-size: 250px;
-    top: 340px;
-    position: absolute;
-}
-
-#portfolio {
-    font-size: 190px;
-    position: absolute;
-    top: 540px;
-    color: #283747;
-}
-
-.about,
-.work,
-.intro {
-    height: 100vh;
-}
-
-.about {
-    background-color: #932432;
-}
-
-.headline {
-    padding-top: 75px;
-    padding-left: 20px;
-    font-size: 120px;
-    font-family: Felix Ti;
-    color: #f3f3f3;
-}
-
-.work {
-    background-color: #283747;
-}
-
-#about-info {
-    width: 1080px;
-    margin-left: 10px;
-    font-family: Lato;
-    font-size: 21px;
-    color: #f3f3f3;
-}
-
 @media screen and (max-width:768px) {
     body {
         overflow-x: hidden;
@@ -116,13 +70,13 @@ nav {
     .nav-links {
         position: absolute;
         right: 0px;
-        height: 92vh;
+        height: 50vh;
         top: 70px;
-        background-color: #f3f3f3;
+        background-color: transparent;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        width: 75%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
     }
@@ -160,3 +114,74 @@ nav {
 .toggle .line3 {
     transform: rotate(45deg) translate(0px, -6px)
 }
+
+.intro {
+    background-color: #f3f3f3;
+    color: #932432;
+    padding-top: 75px;
+    padding-left: 20px;
+    font-family: Felix Ti;
+}
+
+#name1 {
+    top: 65px;
+    font-size: 336px;
+    position: absolute;
+}
+
+#name2 {
+    font-size: 250px;
+    top: 343px;
+    position: absolute;
+}
+
+#name3 {
+    font-size: 190px;
+    position: absolute;
+    top: 550px;
+    color: #283747;
+}
+
+.about,
+.work,
+.intro {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.about {
+    background-color: #932432;
+}
+
+.headline {
+    padding-top: 75px;
+    padding-left: 20px;
+    font-size: 70px;
+    font-family: Felix Ti;
+    color: #f3f3f3;
+    max-width: 100%;
+}
+
+.work {
+    background-color: #283747;
+}
+
+#about-info {
+    width: 1080px;
+    margin-left: 10px;
+    font-family: Lato;
+    font-size: 21px;
+    color: #f3f3f3;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 1680px) {}
+
+@media screen and (max-width: 1280px) {}
+
+@media screen and (max-width: 980px) {}
+
+@media screen and (max-width: 736px) {}
+
+@media screen and (max-width: 480px) {}

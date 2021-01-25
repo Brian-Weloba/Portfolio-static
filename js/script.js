@@ -22,3 +22,22 @@ const navSlide = () => {
 }
 
 navSlide();
+
+$(document).ready(function() {
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > $(window).height() - 70) {
+            $("nav, .nav-active").css({ "background-color": "#932432" });
+            $(".nav-links a, .logo").css({ "color": "#f3f3f3" })
+        } else if ($(window).scrollTop() > ($(window).height() * 2) - 70) {
+            $("nav, .nav-active").css({ "background-color": "#283747" });
+            $(".nav-links a, .logo").css({ "color": "#f3f3f3" })
+        } else if ($(window).scrollTop() < $(window).height() - 70) {
+            $("nav, .nav-active").css({ "background-color": "#f3f3f3" });
+            $(".nav-links a, .logo").css({ "color": "#932432" })
+        } else {
+            $("nav, .nav-active").css({ "background-color": "#f3f3f3" });
+            $(".nav-links a, .logo").css({ "color": "#932432" })
+        }
+
+    })
+})

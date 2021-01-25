@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://use.typekit.net/phg5cnq.css">
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <link rel="stylesheet" type="text/css" href="css/menu.css" />
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
     <!-- Libraries -->
     <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
@@ -48,6 +48,9 @@
     -->
 
     <div class="frame__nav">
+        <div class="logo">
+            <h4>Brian Weloba</h4>
+        </div>
         <label class="main-nav-open nav-toggle" for="main-nav-toggle" tabindex="0" aria-label="Menu">
 						<svg aria-hidden="true" width="28px" height="20px" viewBox="0 0 28 20">
 							<rect x="0" y="2" width="28" height="2"></rect>
@@ -59,13 +62,13 @@
         <nav class="main-nav">
             <ul class="main-nav__fallback">
                 <li>
-                    <a href="#observatory">About</a>
+                    <a href="#about">About</a>
                 </li>
                 <li>
-                    <a href="#research">Work</a>
+                    <a href="#work">Work</a>
                 </li>
                 <li>
-                    <a href="#events">contact</a>
+                    <a href="#events">Contact</a>
                 </li>
                 <li>
                     <a href="#members">Social</a>
@@ -79,24 +82,24 @@
         </nav>
     </div>
 
-    <div class="intro container-fluid">
+    <div id="intro" class="intro container-fluid">
         <p id="name1">Brian<br>
             <span id="name2">Weloba</span>
             <span id="name3">Portfolio</span></p>
     </div>
 
-    <div class="about container-fluid">
-        <h1 class="headline">About</h1>
+    <div id="about" class="about container-fluid">
+        <p class="headline">About</p>
         <div id="about-info" class="container">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget viverra erat. Fusce auctor ornare condimentum. Sed vulputate consectetur ultrices. Integer eget pulvinar odio. Proin fringilla at arcu feugiat feugiat. Donec nec ex nunc.
                 Morbi ut sapien ullamcorper, maximus lorem eu, mollis dui. Suspendisse ut nunc mauris. Duis ut nulla augue.</p>
         </div>
     </div>
-    <div class="work container-fluid">
-        <h1 class="headline">Work</h1>
+    <div id+ "work" class="work container-fluid">
+        <p class="headline">Work</p>
     </div>
-    <script defer src="js/script.js"></script>
     <script src="js/main.js"></script>
+    <script defer src="js/script.js"></script>
 </body>
 
 </html>

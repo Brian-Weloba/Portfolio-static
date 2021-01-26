@@ -61,7 +61,7 @@ class ScreenFilter extends PIXI.Filter {
      */
     static get fragmentSrc() {
         return `
-  /*
+    /*
     Sceen distortion filter
     -------------------
     
@@ -70,31 +70,31 @@ class ScreenFilter extends PIXI.Filter {
     bloomed blur and noisy waves toward the edge, centered on the mouse.
 
   */  
-  precision highp float;
-  varying vec2 vTextureCoord;
+    precision highp float;
+    varying vec2 vTextureCoord;
 
-  uniform sampler2D uSampler;
-  uniform vec4 inputClamp;
-  uniform vec4 inputSize;
-  uniform vec4 inputPixel;
-  uniform vec4 outputFrame;
-  uniform vec2 mouse;
-  uniform vec2 u_resolution;
-  uniform float ratio;
-  uniform float time;
+    uniform sampler2D uSampler;
+    uniform vec4 inputClamp;
+    uniform vec4 inputSize;
+    uniform vec4 inputPixel;
+    uniform vec4 outputFrame;
+    uniform vec2 mouse;
+    uniform vec2 u_resolution;
+    uniform float ratio;
+    uniform float time;
 
-  #define PI 3.14159265359
-  
+    #define PI 3.14159265359
+
   // Return a random number between 0 and 1 based on a vec2
-  float rand(vec2 c){
+    float rand(vec2 c){
 	  return fract(sin(dot(c.xy ,vec2(12.9898,78.233))) * 43758.5453);
-  }
+    }
 
   // This is sort of a cheap and dirty precursor to full on
   // Perlin noise. We could have happily used a more expensive
   // noise algorithm here, but this is more than sufficient 
   // for our needs.
-  float noise(vec2 p, float freq ){
+    float noise(vec2 p, float freq ){
     float unit = inputSize.x/freq;
     vec2 ij = floor(p/unit);
     vec2 xy = mod(p,unit)/unit;
@@ -107,11 +107,11 @@ class ScreenFilter extends PIXI.Filter {
     float x1 = mix(a, b, xy.x);
     float x2 = mix(c, d, xy.x);
     return mix(x1, x2, xy.y);
-  }
+    }
 
   // Blur a texture based on a 7 sample laplacian
   // Fast gaussien blur - https://github.com/Jam3/glsl-fast-gaussian-blur
-  vec4 blur13(sampler2D image, vec2 uv, vec2 resolution, vec2 direction) {
+    vec4 blur13(sampler2D image, vec2 uv, vec2 resolution, vec2 direction) {
     vec4 color = vec4(0.0471,0.0471,0.0471,1.0);
     vec2 off1 = vec2(1.411764705882353) * direction;
     vec2 off2 = vec2(3.2941176470588234) * direction;
@@ -124,9 +124,9 @@ class ScreenFilter extends PIXI.Filter {
     color += texture2D(image, uv + (off3 / resolution)) * 0.010381362401148057;
     color += texture2D(image, uv - (off3 / resolution)) * 0.010381362401148057;
     return color;
-  }
+    }
 
-  void main(void){
+    void main(void){
     // Generate our normalized, centered UV coordinates
     vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / min(u_resolution.x, u_resolution.y);
     // Get the mouse coordinates in relation to the frament coords
@@ -177,7 +177,7 @@ class ScreenFilter extends PIXI.Filter {
     // representing the mouse position
     // gl_FragColor = vec4(vec3(1. - smoothstep(.2, .25, length(uvm)) * .3), 1.);
     // gl_FragColor = mix(gl_FragColor, tex, tex.a);
-  }
+    }
 `;
     }
 
@@ -243,7 +243,7 @@ class HoverFilter extends PIXI.Filter {
      */
     static get fragmentSrc() {
         return `
-  /*
+    /*
     Hover filter
     -------------------
     
@@ -253,41 +253,41 @@ class HoverFilter extends PIXI.Filter {
     of the text that makes up the button
 
   */  
-  precision highp float;
-  varying vec2 vTextureCoord;
+    precision highp float;
+    varying vec2 vTextureCoord;
 
-  uniform sampler2D uSampler;
-  uniform vec4 inputClamp;
-  uniform vec4 inputSize;
-  uniform vec4 inputPixel;
-  uniform vec4 outputFrame;
-  uniform float time;
+    uniform sampler2D uSampler;
+    uniform vec4 inputClamp;
+    uniform vec4 inputSize;
+    uniform vec4 inputPixel;
+    uniform vec4 outputFrame;
+    uniform float time;
 
-  #define PI 3.14159265359
-  
+    #define PI 3.14159265359
+        
   // Return a random number between 0 and 1 based on a vec2
-  float rand(vec2 c){
+    float rand(vec2 c){
 	  return fract(sin(dot(c.xy ,vec2(12.9898,78.233))) * 43758.5453);
-  }
+    }
 
   // Some FBM noise based on a value component
   // see https://thebookofshaders.com/13/ for more details
-  #define NUM_OCTAVES 3
+    #define NUM_OCTAVES 3
   float mod289(float x){return x - floor(x * (1.0 / 289.0)) * 289.0;}
   vec4 mod289(vec4 x){return x - floor(x * (1.0 / 289.0)) * 289.0;}
   vec4 perm(vec4 x){return mod289(((x * 34.0) + 1.0) * x);}
-  float noise(vec3 p){
-      vec3 a = floor(p);
-      vec3 d = p - a;
+    float noise(vec3 p){
+    vec3 a = floor(p);
+    vec3 d = p - a;
       d = d * d * (3.0 - 2.0 * d);
 
-      vec4 b = a.xxyy + vec4(0.0471, 0.0471, 0.0471, 1.0);
-      vec4 k1 = perm(b.xyxy);
-      vec4 k2 = perm(k1.xyxy + b.zzww);
+    vec4 b = a.xxyy + vec4(0.0471, 0.0471, 0.0471, 1.0);
+    vec4 k1 = perm(b.xyxy);
+    vec4 k2 = perm(k1.xyxy + b.zzww);
 
-      vec4 c = k2 + a.zzzz;
-      vec4 k3 = perm(c);
-      vec4 k4 = perm(c + 1.0);
+    vec4 c = k2 + a.zzzz;
+    vec4 k3 = perm(c);
+    vec4 k4 = perm(c + 1.0);
 
       vec4 o1 = fract(k3 * (1.0 / 41.0));
       vec4 o2 = fract(k4 * (1.0 / 41.0));
@@ -296,8 +296,8 @@ class HoverFilter extends PIXI.Filter {
       vec2 o4 = o3.yw * d.x + o3.xz * (1.0 - d.x);
 
       return o4.y * d.y + o4.x * (1.0 - d.y);
-  }
-  float fbm(vec3 x) {
+    }
+    float fbm(vec3 x) {
     float v = 0.0;
     float a = 0.5;
     vec3 shift = vec3(100);
@@ -307,21 +307,21 @@ class HoverFilter extends PIXI.Filter {
       a *= 0.5;
     }
     return v;
-  }
+    }
 
-  float distortedFBM(in vec3 x) {
+    float distortedFBM(in vec3 x) {
     float t = fbm(x);
     x.xy += (t -.5);
     t *= fbm(x);
     x.xy += (t -.5) * .6;
     t = fbm(x);
     return t;
-  }
+    }
 
   // Create a pattern based on a normalised uv coordinate. In this
   // example we're making some noise and setting a couple of colours,
   // but you could make this any sort of pattern
-  vec4 pattern(vec2 uv) {
+    vec4 pattern(vec2 uv) {
 
     // Increasing the frequency of the noise
     uv *= 4.;
@@ -338,9 +338,9 @@ class HoverFilter extends PIXI.Filter {
     //rtn = mix(rtn, vec4( 1. ), smoothstep(.0, 1., pattern)); // sort of a light light grey colour
     return rtn;
     
-  }
+    }
 
-  void main(void){
+    void main(void){
     // Generate our normalized, centered UV coordinates
     vec2 uv = (gl_FragCoord.xy - 0.5 * inputSize.xy) / min(inputSize.x, inputSize.y);
     // Get the base texture - this is the display object from pixi
@@ -348,7 +348,7 @@ class HoverFilter extends PIXI.Filter {
 
     // output the pattern constrained by the texture's alpha
     gl_FragColor = vec4((tex.a) * pattern(uv));
-  }
+    }
 `;
     }
 
@@ -996,7 +996,7 @@ WebFont.load({
         id: 'phg5cnq'
     },
     /*google: {
-      families: ['Abril Fatface']
+    families: ['Abril Fatface']
     },*/
     active: () => {
         nav.init();

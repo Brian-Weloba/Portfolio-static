@@ -279,17 +279,6 @@ main {
     color: var(--color-text-secondary);
 }
 
-.frame__nav {
-    display: flex;
-    justify-content: space-around;
-    width: 100vw;
-    position: fixed;
-    background-color: #f3f3f3;
-    z-index: 2;
-    top: 1rem;
-    margin: 1rem 0;
-}
-
 .content {
     display: flex;
     width: 100%;
@@ -444,4 +433,15 @@ main {
     .content__title-wrap {
         padding: 2rem 2rem 0;
     }
+}
+
+.frame__nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    position: fixed;
+    background-color: #f3f3f3;
+    z-index: 2;
+    top: 1rem;
+    margin: 1rem 0;
 }

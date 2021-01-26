@@ -41,3 +41,56 @@
 
 //     })
 // })
+
+// When the user scrolls the page, execute progressBar
+window.onscroll = function() { progressBar() };
+
+function progressBar() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+
+const card = document.querySelector(".inner");
+const container = document.querySelector("#container");
+
+//items 
+const card2 = document.querySelector(".card2");
+const circle = document.querySelector(".circle");
+const card1 = document.querySelector(".card1");
+const name2 = document.querySelector(".name2");
+const name21 = document.querySelector("#name2");
+const name1 = document.querySelector(".name1");
+// const location = document.querySelector(".location");
+
+//moving animation
+container.addEventListener('mousemove', (e) => {
+    // console.log(e.pageX);
+    let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+    let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+    console.log(xAxis, yAxis);
+    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+});
+//ani out
+container.addEventListener('mouseenter', (e) => {
+        card.style.transition = "none";
+        //popout
+        card2.style.transform = "translateZ(10px) rotate(20deg)";
+        name1.style.transform = "translateZ(200px)";
+        name2.style.transform = "translateZ(125px)";
+        name21.style.transform = "translateZ(125px)";
+        circle.style.transform = "translateZ(100px)";
+    })
+    //ani in
+container.addEventListener('mouseleave', (e) => {
+    card.style.transition = "all 0.5s ease"
+    card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    //popback
+    card2.style.transform = "translateZ(0px) rotate(0deg)";
+    name1.style.transform = "translateZ(0px)";
+    name2.style.transform = "translateZ(0px)";
+    name21.style.transform = "translateZ(0px)";
+    circle.style.transform = "translateZ(0px)";
+});

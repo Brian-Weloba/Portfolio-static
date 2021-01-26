@@ -446,3 +446,28 @@ main {
         padding: 2rem 2rem 0;
     }
 }
+
+
+/* The progress container (grey background) */
+
+.progress-container {
+    width: 100vw;
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    background: #f3f3f3;
+    z-index: 3;
+}
+
+
+/* The progress bar (scroll indicator) */
+
+.progress-bar {
+    height: 2px;
+    background: #932432;
+    position: absolute;
+    bottom: 0px;
+    width: 0%;
+    filter: drop-shaddow(5px 5px 8px #000);
+    transition: width 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}

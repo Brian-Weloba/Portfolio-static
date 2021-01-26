@@ -28,6 +28,10 @@ nav {
     font-family: Felix Ti;
 }
 
+.logo h4 {
+    margin-bottom: 0px;
+}
+
 .nav-links {
     display: flex;
     justify-content: space-around;

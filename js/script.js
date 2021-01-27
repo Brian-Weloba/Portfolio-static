@@ -70,22 +70,22 @@ container.addEventListener('mousemove', (e) => {
     // console.log(e.pageX);
     let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
     let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-    console.log(xAxis, yAxis);
+    // console.log(xAxis, yAxis);
     card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 });
 //ani out
 container.addEventListener('mouseenter', (e) => {
         card.style.transition = "none";
         //popout
-        card2.style.transform = "translateZ(10px) rotate(20deg)";
+        card2.style.transform = "translateZ(10px) rotate(30deg)";
         name1.style.transform = "translateZ(200px)";
         name2.style.transform = "translateZ(125px)";
         name21.style.transform = "translateZ(125px)";
-        circle.style.transform = "translateZ(100px)";
+        circle.style.transform = "translateZ(100px) translate(-5vw, -10vh)";
     })
     //ani in
 container.addEventListener('mouseleave', (e) => {
-    card.style.transition = "all 0.5s ease"
+    card.style.transition = "all 0.8s ease"
     card.style.transform = `rotateY(0deg) rotateX(0deg)`;
     //popback
     card2.style.transform = "translateZ(0px) rotate(0deg)";

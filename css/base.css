@@ -281,12 +281,13 @@ main {
 
 .frame__nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100vw;
     height: 70px;
     align-items: center;
     position: fixed;
-    background-color: #f3f3f3;
+    background-color: #283747;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
     z-index: 2;
     top: 0px;
 }
@@ -436,7 +437,6 @@ main {
         margin: 0 1rem 0 0;
     }
     .frame__nav {
-        margin: 0;
         grid-area: menu;
     }
     .frame__info {
